@@ -10,7 +10,7 @@
 架构目标
 ----
 
-	**它们的架构与功能是完全独立的。这意味着我们在构建系统时，应该选择最符合当前需求的架构，并在该架构的框架下实现功能。——《恰如其分的软件架构》**
+**它们的架构与功能是完全独立的。这意味着我们在构建系统时，应该选择最符合当前需求的架构，并在该架构的框架下实现功能。——《恰如其分的软件架构》**
 
 虽然这个21点看似简单，其实不然。当然，如果你只是想实现一个只有最简单21点游戏，而不考虑**可扩展性**、**可维护性**，你大可使用一个大大的`if-else`实现。这也算是一种架构。
 
@@ -63,6 +63,7 @@
 
 
 使用Groovy来实现的好处有：
+
 1. 实时修改游戏规则（例牌等），不需要重启服务器
 1. 提高程序的可扩展性
 1. 提高游戏的可配置性
@@ -104,10 +105,10 @@
 1. 过五龙：
     玩家或庄家手上的牌超过了5张，但还没有爆牌的情况。
 
-实际上，你可以发挥你的想像来实现你的例牌。比如，当庄家为Blackjack而玩家为五龙，则为打平等等。
-
-1. 同花顺
+1. 同花顺:
     玩家手上有三张牌：牌色相同，面值分别是6,7,8的情况。
+
+实际上，你可以发挥你的想像来实现你的例牌。比如，当庄家为Blackjack而玩家为五龙，则为打平等等。
 
 ## 未实现的操作
 
@@ -257,43 +258,43 @@ Blackjack-server 服务器端
 	* 例子  
 
 
-		switch (_headCard.cardCount) {
-            case 2:
-                if (_headCard.sumPoint == 21) { // 首两张牌点数为21点时是Blackjack
-                    name = "Blackjack"
-                    actions = [_report]
-                } else if (_headCard.sumPoint == 11) {  // 首两张下牌点数等于11点时可以双倍下注
-                    name = "doubleDown"
-                    actions = [_hit, _stand, _doubleDown]
-                } else if (_headCard.isFirstTwoCardPointEquals()) { //首两张牌的面值相同，可进行分牌
-                    //设置分牌后不可以再分。
-                    if (_headCard.isSplit()) {
-                        return
+    		switch (_headCard.cardCount) {
+                case 2:
+                    if (_headCard.sumPoint == 21) { // 首两张牌点数为21点时是Blackjack
+                        name = "Blackjack"
+                        actions = [_report]
+                    } else if (_headCard.sumPoint == 11) {  // 首两张下牌点数等于11点时可以双倍下注
+                        name = "doubleDown"
+                        actions = [_hit, _stand, _doubleDown]
+                    } else if (_headCard.isFirstTwoCardPointEquals()) { //首两张牌的面值相同，可进行分牌
+                        //设置分牌后不可以再分。
+                        if (_headCard.isSplit()) {
+                            return
+                        }
+                        name = "split"
+                        actions = [_hit, _stand, _split]
                     }
-                    name = "split"
-                    actions = [_hit, _stand, _split]
-                }
-                break
-            case 3:
-                // 同花顺
-                if (_headCard.containsAllCardFace(6, 7, 8) && _headCard.isCardFaceIdentical()) {
-                    name = "royal"
-                    actions = [_report]
-                }
-                break
-            case 5:
-                if (_headCard.sumPoint <= 21){
-                    name = "fiveCard"
-                    actions = [_report]
-                }
-                break
-        }
+                    break
+                case 3:
+                    // 同花顺
+                    if (_headCard.containsAllCardFace(6, 7, 8) && _headCard.isCardFaceIdentical()) {
+                        name = "royal"
+                        actions = [_report]
+                    }
+                    break
+                case 5:
+                    if (_headCard.sumPoint <= 21){
+                        name = "fiveCard"
+                        actions = [_report]
+                    }
+                    break
+            }
 
-        // 爆牌
-        if (_headCard.sumPoint > 21) {
-            name = "bust"
-            actions = [_stop]
-        }
+            // 爆牌
+            if (_headCard.sumPoint > 21) {
+                name = "bust"
+                actions = [_stop]
+            }
 
 
 1. 在配置脚本中可以使用的变量 ：
