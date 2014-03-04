@@ -178,28 +178,7 @@ Blackjack-server 服务器端
 ---
 有一个`CasinoTest`测试类。测试类模拟的是一场简单的赌博。从中可以看出如何使用此核心库。
 
-下面是跑测试时的输出：
 
-		12:33:54.568 [main] INFO  c.z.blackjack.core.CasinoTest - 三名玩家分别存入赌场
-		12:33:54.573 [main] INFO  c.z.blackjack.core.CasinoTest - 甲 存入：400.0
-		12:33:54.576 [main] INFO  c.z.blackjack.core.CasinoTest - 乙 存入：400.0
-		12:33:54.577 [main] INFO  c.z.blackjack.core.CasinoTest - 丙 存入：400.0
-		12:33:54.580 [main] WARN  c.z.blackjack.core.CasinoTest - 三名玩家加入赌桌:1
-		12:33:54.584 [main] INFO  c.z.blackjack.core.CasinoTest - 选举出庄家为：甲 
-		12:33:54.586 [main] INFO  c.z.blackjack.core.CasinoTest - 玩家乙 下注：20
-		12:33:54.586 [main] INFO  c.z.blackjack.core.CasinoTest - 玩家丙 下注：20
-		12:33:56.154 [main] INFO  c.z.blackjack.core.CasinoTest - *****开始******
-		12:33:56.154 [main] INFO  c.z.blackjack.core.CasinoTest - 乙 手上的牌，点数：[20] 分别为：[{SPADE-Q}, {SPADE-K}]
-		12:33:56.154 [main] INFO  c.z.blackjack.core.CasinoTest - 丙 手上的牌，点数：[17] 分别为：[{HEART-J}, {HEART-7}]
-		12:33:56.236 [main] INFO  c.z.blackjack.core.CasinoTest - 乙 停牌，点数：20，分别为：[{SPADE-Q}, {SPADE-K}]
-		12:33:56.319 [main] INFO  c.z.blackjack.core.CasinoTest - 丙 停牌，点数：17，分别为：[{HEART-J}, {HEART-7}]
-		12:33:56.320 [main] INFO  c.z.blackjack.core.CasinoTest - 庄家甲 点数为14不足17点
-		12:33:56.474 [main] INFO  c.z.blackjack.core.CasinoTest - 庄家要牌，最后点数：[24] 牌为：[{HEART-6}, {HEART-8}, {DIAMOND-K}]
-		12:33:56.474 [main] INFO  c.z.blackjack.core.CasinoTest - **********所有玩家停牌，开始结算
-		12:33:56.737 [main] INFO  c.z.blackjack.core.CasinoTest - 乙  下注 20.0 赢家为PLAYER 最后余额：420.0
-		12:33:56.817 [main] INFO  c.z.blackjack.core.CasinoTest - 丙  下注 20.0 赢家为PLAYER 最后余额：420.0
-		12:33:56.817 [main] INFO  c.z.blackjack.core.CasinoTest - 庄家甲  最后余额:360.0
-		12:33:56.818 [main] WARN  c.z.blackjack.core.CasinoTest - *******结束
 
 
 
