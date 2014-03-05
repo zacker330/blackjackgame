@@ -66,7 +66,7 @@ public class AppTest {
 
         assert tables.betWinnerLoserCalculate(playerProxyB).getWinner().equals(Winner.PLAYER);
 
-        assert tables.betWinnerLoserCalculate(playerProxyB).getWinAmount().doubleValue() == 20;
+        assert tables.betWinnerLoserCalculate(playerProxyB).getWinAmount().doubleValue() == 30;
 
 
         // assert dealerProxy.getPlayer().getMoney().intValue() == (1000 - 10);

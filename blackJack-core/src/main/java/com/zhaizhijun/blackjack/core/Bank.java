@@ -12,7 +12,15 @@ import java.util.Map;
  */
 public class Bank {
 
-    private Map<String, BigDecimal> data = new HashMap<String, BigDecimal>();
+    private BankRepository bankRepository;
+
+
+    public void setBankRepository(BankRepository bankRepository) {
+        if (null != this.bankRepository) {
+            return;
+        }
+        this.bankRepository = bankRepository;
+    }
 
     /**
      * 存款
@@ -22,29 +30,16 @@ public class Bank {
      */
     protected void deposit(String player, BigDecimal amount) {
         assert player != null && amount != null && amount.doubleValue() > 0;
-
-        if (isPlayerInBank(player)) {
-            data.put(player, data.get(player).add(amount));
-        } else {
-            data.put(player, amount);
-        }
+        bankRepository.deposit(player, amount);
     }
 
-    protected BigDecimal query(String player) {
+    protected BigDecimal balance(String player) {
         assert player != null;
-        if (isPlayerInBank(player)) {
-            return data.get(player);
-        }
+        return bankRepository.balance(player);
 
-        return BigDecimal.ZERO;
 
     }
 
-
-    protected boolean isPlayerInBank(String player) {
-        assert player != null;
-        return data.containsKey(player);
-    }
 
     /**
      * TODO 需要持久化操作
@@ -54,25 +49,14 @@ public class Bank {
      * @throws NotEnoughMoneyException 没有足够的钱取
      */
     protected synchronized void withdraw(String player, BigDecimal amount) {
-        assert player != null && isPlayerInBank(player) && amount != null && amount.doubleValue() > 0;
-
-        if (!hadMoney(player, amount)) {
-            throw new NotEnoughMoneyException();
-        }
-
-        data.put(player, data.get(player).subtract(amount));
+        assert player != null && amount != null && amount.doubleValue() > 0;
+        bankRepository.withdraw(player, amount);
     }
 
     protected synchronized boolean hadMoney(String player, BigDecimal amount) {
-        return data.get(player).compareTo(amount) >= 0;
+        return bankRepository.balance(player).compareTo(amount) >= 0;
     }
 
-    @Override
-    public String toString() {
-        return "Bank{" +
-                "data=" + data +
-                '}';
-    }
 
     /**
      * 转钱
@@ -84,13 +68,13 @@ public class Bank {
      */
     public synchronized void transferMoney(String from, String to, BigDecimal amount) {
         assert from != null && to != null && amount != null && amount.doubleValue() > 0;
-
-        if (!hadMoney(from, amount)) {
-            throw new NotEnoughMoneyException();
-        }
-        withdraw(from, amount);
-        deposit(to, amount);
+        bankRepository.transferMoney(from, to, amount);
     }
 
-
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "bankRepository=" + bankRepository +
+                '}';
+    }
 }

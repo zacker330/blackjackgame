@@ -45,9 +45,6 @@ public class Casino {
     }
 
 
-
-
-
     public static boolean isSignUpped(String player) {
         return playerSet.contains(player);
     }
@@ -106,9 +103,9 @@ public class Casino {
         }
     }
 
-    public static BigDecimal queryBank(String player) {
+    public static BigDecimal playerBalance(String player) {
         assert player != null;
-        return bank.query(player);
+        return bank.balance(player);
     }
 
 
@@ -193,7 +190,7 @@ public class Casino {
     }
 
     public static boolean isDoubleDownAbility(String player, BigDecimal betAmount) {
-        return bank.query(player).subtract(betAmount.multiply(new BigDecimal(2))).doubleValue() >= 0;
+        return bank.balance(player).subtract(betAmount.multiply(new BigDecimal(2))).doubleValue() >= 0;
     }
 
     public static void openTable(int tableId) {
@@ -329,5 +326,9 @@ public class Casino {
         whenTableNullThrowException(tables);
 
         tables.close();
+    }
+
+    public static void setBankRepository(BankRepository bankRepository) {
+        bank.setBankRepository(bankRepository);
     }
 }

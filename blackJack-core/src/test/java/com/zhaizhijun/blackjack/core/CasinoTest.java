@@ -5,6 +5,9 @@ import com.zhaizhijun.blackjack.core.playerAction.HitAction;
 import com.zhaizhijun.blackjack.core.playerAction.ReportAction;
 import com.zhaizhijun.blackjack.core.playerAction.SplitAction;
 import org.junit.Test;
+
+import static org.mockito.Mockito.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +24,10 @@ public class CasinoTest {
 
     @Test
     public void testAll() throws Exception {
+
+        BankRepository bankRepository = new MockBankRepository();
+
+        Casino.setBankRepository(bankRepository);
 
 
         //初始化赌场
@@ -43,20 +50,21 @@ public class CasinoTest {
         assert Casino.isSignUpped(bing);
 
         // 玩家将钱存入赌场
+
         Casino.deposit(jia, new BigDecimal(400));
-        assert Casino.queryBank(jia).intValue() == 400;
+        assert Casino.playerBalance(jia).intValue() == 400;
 
         Casino.deposit(yi, new BigDecimal(400));
-        assert Casino.queryBank(yi).intValue() == 400;
+        assert Casino.playerBalance(yi).intValue() == 400;
         assert !Casino.isEnoughMoneyToBet(yi, new BigDecimal(2000));
 
         Casino.deposit(bing, new BigDecimal(400));
-        assert Casino.queryBank(bing).intValue() == 400;
+        assert Casino.playerBalance(bing).intValue() == 400;
         assert Casino.isEnoughMoneyToBet(bing, new BigDecimal(200));
 
         LOGGER.info("三名玩家分别存入赌场");
         for (String each : Arrays.asList(jia, yi, bing)) {
-            LOGGER.info("{}存入：{}", each, Casino.queryBank(each).doubleValue());
+            LOGGER.info("{}存入：{}", each, Casino.playerBalance(each).doubleValue());
         }
 
 
@@ -177,15 +185,15 @@ public class CasinoTest {
         LOGGER.info("{} 下注 {} 赢家为{} 最后余额：{}", playerProxy.getPlayer(),
                 playerProxy.getBetMoney().doubleValue(),
                 Casino.betCalculate(tableId, playerProxy).getWinner(),
-                Casino.queryBank(playerProxy.getPlayer()).doubleValue());
+                Casino.playerBalance(playerProxy.getPlayer()).doubleValue());
 
 
         LOGGER.info("{} 下注 {} 赢家为{} 最后余额：{}", playerProxy1.getPlayer(),
                 playerProxy1.getBetMoney().doubleValue(),
                 Casino.betCalculate(tableId, playerProxy1).getWinner(),
-                Casino.queryBank(playerProxy1.getPlayer()).doubleValue());
+                Casino.playerBalance(playerProxy1.getPlayer()).doubleValue());
 
-        LOGGER.info("庄家{} 最后余额:{}", tables.getDealerProxy().getPlayer(), Casino.queryBank(tables.getDealerPlayer()).doubleValue());
+        LOGGER.info("庄家{} 最后余额:{}", tables.getDealerProxy().getPlayer(), Casino.playerBalance(tables.getDealerPlayer()).doubleValue());
 
         LOGGER.warn("*******结束");
 
