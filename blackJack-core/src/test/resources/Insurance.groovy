@@ -1,3 +1,0 @@
-
-
-winMoney = playerFirstBet * 2
