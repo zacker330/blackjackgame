@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 赌场
+ * 赌场，是所有玩家玩牌的接口。
  * User: zjzhai
  * Date: 2/20/14
  */

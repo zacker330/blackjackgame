@@ -3,7 +3,7 @@ package com.zhaizhijun.blackjack.core;
 import java.util.Random;
 
 /**
- * Utils
+ * 工具类
  * User: zjzhai
  * Date: 2/24/14
  * Time: 10:27 PM

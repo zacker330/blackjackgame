@@ -77,9 +77,7 @@ public class Tables implements Comparable<Tables> {
         assert partyProxy != null;
 
         for (PlayerProxy each : playerProxies) {
-            if (partyProxy.equals(each)) {
-                return true;
-            }
+            if (partyProxy.equals(each)) return true;
         }
         return false;
     }

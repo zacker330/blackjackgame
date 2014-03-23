@@ -10,11 +10,14 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * 默认的牌型计算器
+ * 默认实现的牌型计算器<p/>
+ * 原理是将一手牌（HeadCard）、完成能进行的操作这些基础数据注入到groovy脚本中<p/>
+ * 用户在脚本使用这些基础数据来自定义自己的牌型
  * User: zjzhai
  * Date: 2/27/14
  */
 public class GroovyCardCategoryCalculateEngine implements CardCategoryCalculateEngine {
+    // 牌型计算规则脚本的路径
     private static final String CARD_CATEGORY_CALCULATE_SCRIPT_PATH = "/";
 
     public CardCategory calculate(HeadCard headCard) {
@@ -35,6 +38,11 @@ public class GroovyCardCategoryCalculateEngine implements CardCategoryCalculateE
         return new CardCategory(name, actions);
     }
 
+    /**
+     * 将变量注入到脚本中
+     *
+     * @param binding
+     */
     private static void injectPlayerActionTo(Binding binding) {
         binding.setVariable("_doubleDown", new DoubleDownAction());
         binding.setVariable("_hit", new HitAction());

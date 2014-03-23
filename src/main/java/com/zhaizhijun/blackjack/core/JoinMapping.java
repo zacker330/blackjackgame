@@ -11,6 +11,9 @@ import java.util.*;
  */
 public class JoinMapping {
 
+    /**
+     * TODO 考虑线程完全问题
+     */
     private static Map<Integer, SortedSet<String>> mapping = new HashMap<Integer, SortedSet<String>>();
 
     /**

@@ -4,6 +4,8 @@ import com.zhaizhijun.blackjack.core.PlayerProxy;
 import com.zhaizhijun.blackjack.core.Tables;
 
 /**
+ * 21点游戏中，玩家所能进行的操作是有限的，只有：要牌(Hit),停牌(Stand),双倍下注(Double)，报到(Report),投降(Surrender)，分牌(Split)。
+ * PlayerAction 是各个操作的基类
  * User: zjzhai
  * Date: 2/7/14
  */

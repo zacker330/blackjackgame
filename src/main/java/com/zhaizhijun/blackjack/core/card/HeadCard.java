@@ -1,6 +1,8 @@
 package com.zhaizhijun.blackjack.core.card;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * 手上的牌
@@ -9,6 +11,9 @@ import java.util.*;
  */
 public class HeadCard {
 
+    /**
+     * 21点，最大的点数
+     */
     public static final int BLACK_JACK_MAX = 21;
 
     /**

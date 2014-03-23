@@ -6,6 +6,8 @@ import com.zhaizhijun.blackjack.core.playerAction.SurrenderAction;
 import java.math.BigDecimal;
 
 /**
+ * 玩家代理，你可以理解成“一手牌”的抽象。一个玩家是可以同时操作两手牌的。
+ *
  * User: zjzhai
  * Date: 1/30/14
  */

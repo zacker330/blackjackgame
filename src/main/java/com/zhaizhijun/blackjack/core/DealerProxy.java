@@ -2,6 +2,7 @@ package com.zhaizhijun.blackjack.core;
 
 
 /**
+ * 庄家代理
  * User: zjzhai
  * Date: 1/30/14
  */

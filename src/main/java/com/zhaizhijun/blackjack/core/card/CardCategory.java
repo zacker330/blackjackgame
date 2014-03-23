@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * 牌型，指手上的牌的排列组合，比如同花顺就是一种牌型
  * User: zjzhai
  * Date: 2/7/14
  */

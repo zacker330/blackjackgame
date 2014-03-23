@@ -5,6 +5,7 @@ import com.zhaizhijun.blackjack.core.Tables;
 import com.zhaizhijun.blackjack.core.card.PlayerAction;
 
 /**
+ * 分牌
  * User: zjzhai
  * Date: 2/7/14
  */

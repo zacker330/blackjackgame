@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 银行，赌场中虚拟金钱的管理人
  * User: zjzhai
  * Date: 2/21/14
  */
@@ -16,9 +17,8 @@ public class Bank {
 
 
     public void setBankRepository(BankRepository bankRepository) {
-        if (null != this.bankRepository) {
-            return;
-        }
+        if (null != this.bankRepository) return;
+
         this.bankRepository = bankRepository;
     }
 

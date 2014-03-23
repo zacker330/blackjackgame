@@ -3,7 +3,7 @@ package com.zhaizhijun.blackjack.core;
 import java.util.*;
 
 /**
- * 赌桌池
+ * 赌桌池，一个赌场是可能会有很多赌桌的
  * User: zjzhai
  * Date: 2/21/14
  */

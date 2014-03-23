@@ -1,6 +1,7 @@
 package com.zhaizhijun.blackjack.core.card;
 
 /**
+ * 牌色
  * User: zjzhai
  * Date: 1/23/14
  */

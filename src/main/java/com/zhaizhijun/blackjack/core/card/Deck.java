@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 整副牌
+ * 整副牌，包括52张牌
  * User: zjzhai
  * Date: 1/21/14
  */

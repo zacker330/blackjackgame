@@ -1,6 +1,7 @@
 package com.zhaizhijun.blackjack.core;
 
 /**
+ * 赢家
  * User: zjzhai
  * Date: 2/8/14
  */

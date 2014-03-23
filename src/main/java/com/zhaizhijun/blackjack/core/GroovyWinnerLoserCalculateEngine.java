@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.math.BigDecimal;
 
 /**
- * 默认实现
+ * 输赢计算引擎的默认实现，当所有玩家都停牌后，每位闲家会分别与庄家比输赢。如果闲家赢，还会计算出赔率<p/>
+ * 原理：把赌桌上所有的玩家的手上的牌（HeadCard）的相关信息注入到脚本中，脚本的书写人将根据这些信息来自定义赌桌的规则。
+ *
  * User: zjzhai
  * Date: 2/27/14
  */

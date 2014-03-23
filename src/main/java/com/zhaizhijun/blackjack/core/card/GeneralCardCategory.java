@@ -6,7 +6,7 @@ import com.zhaizhijun.blackjack.core.playerAction.StandAction;
 import java.util.Arrays;
 
 /**
- * 常规牌型
+ * 常规牌型,不是任何的例牌，就为常规牌型
  * User: zjzhai
  * Date: 2/8/14
  */

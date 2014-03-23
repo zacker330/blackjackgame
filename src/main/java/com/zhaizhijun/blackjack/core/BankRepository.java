@@ -3,6 +3,7 @@ package com.zhaizhijun.blackjack.core;
 import java.math.BigDecimal;
 
 /**
+ * 银行的仓储
  * User: zjzhai
  * Date: 3/5/14
  * Time: 11:45 AM

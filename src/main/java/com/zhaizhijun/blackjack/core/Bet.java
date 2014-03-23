@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 注
+ * 注，在游戏开局前，所有闲家都会下注
  * User: zjzhai
  * Date: 1/21/14
  */

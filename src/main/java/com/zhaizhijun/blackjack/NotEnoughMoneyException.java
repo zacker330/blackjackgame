@@ -1,6 +1,7 @@
 package com.zhaizhijun.blackjack;
 
 /**
+ * 没有足够的金钱
  * User: zjzhai
  * Date: 2/23/14
  */
