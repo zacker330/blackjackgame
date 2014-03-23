@@ -117,7 +117,7 @@ public class Tables implements Comparable<Tables> {
      * @return
      * @throws BlackjackException 玩家非法操作
      */
-    public Tables invokeAction(AbstractPlayerAction playerAction, PlayerProxy playerProxy) {
+    public Tables invokeAction(PlayerAction playerAction, PlayerProxy playerProxy) {
         if (!isThePartyProxyTheTables(playerProxy)) {
             LOGGER.error("非法操作，该玩家代理不能进行此操作");
             throw new BlackjackException("There is not the player " + playerAction + " at the table");

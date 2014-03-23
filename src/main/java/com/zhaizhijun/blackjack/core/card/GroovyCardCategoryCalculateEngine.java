@@ -27,7 +27,7 @@ public class GroovyCardCategoryCalculateEngine implements CardCategoryCalculateE
         } catch (IOException e) {
             throw new BlackjackException("CardCategory calculate exception", e);
         }
-        List<AbstractPlayerAction> actions = (List<AbstractPlayerAction>) shell.getVariable("actions");
+        List<PlayerAction> actions = (List<PlayerAction>) shell.getVariable("actions");
         String name = (String) shell.getVariable("name");
         if (null == name) {
             return new GeneralCardCategory();

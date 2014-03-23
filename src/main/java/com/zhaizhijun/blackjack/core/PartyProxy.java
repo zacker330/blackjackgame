@@ -2,7 +2,7 @@ package com.zhaizhijun.blackjack.core;
 
 import com.zhaizhijun.blackjack.core.card.Card;
 import com.zhaizhijun.blackjack.core.card.HeadCard;
-import com.zhaizhijun.blackjack.core.playerAction.AbstractPlayerAction;
+import com.zhaizhijun.blackjack.core.card.PlayerAction;
 
 import java.util.List;
 
@@ -75,7 +75,7 @@ public abstract class PartyProxy {
         getHeadCard().flushCardCategory();
     }
 
-    public List<AbstractPlayerAction> getActions() {
+    public List<PlayerAction> getActions() {
         return getHeadCard().getCardCategory().getActions();
     }
 

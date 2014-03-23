@@ -1,7 +1,5 @@
 package com.zhaizhijun.blackjack.core.card;
 
-import com.zhaizhijun.blackjack.core.playerAction.AbstractPlayerAction;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,9 +12,9 @@ public class CardCategory {
 
     private final String name;
 
-    private List<AbstractPlayerAction> actions = new ArrayList<AbstractPlayerAction>();
+    private List<PlayerAction> actions = new ArrayList<PlayerAction>();
 
-    public CardCategory(String name, List<AbstractPlayerAction> actions) {
+    public CardCategory(String name, List<PlayerAction> actions) {
         this.name = name;
         this.actions = actions;
     }
@@ -25,7 +23,7 @@ public class CardCategory {
         return name;
     }
 
-    public List<AbstractPlayerAction> getActions() {
+    public List<PlayerAction> getActions() {
         return Collections.unmodifiableList(actions);
     }
 

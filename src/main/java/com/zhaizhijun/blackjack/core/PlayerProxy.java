@@ -1,6 +1,6 @@
 package com.zhaizhijun.blackjack.core;
 
-import com.zhaizhijun.blackjack.core.playerAction.AbstractPlayerAction;
+import com.zhaizhijun.blackjack.core.card.PlayerAction;
 import com.zhaizhijun.blackjack.core.playerAction.SurrenderAction;
 
 import java.math.BigDecimal;
@@ -13,7 +13,7 @@ public class PlayerProxy extends PartyProxy {
 
     private Bet bet;
 
-    private AbstractPlayerAction latestAction;
+    private PlayerAction latestAction;
 
 
     protected PlayerProxy(String player) {
@@ -53,7 +53,7 @@ public class PlayerProxy extends PartyProxy {
         return latestAction.getName();
     }
 
-    public void setLatestAction(AbstractPlayerAction latestAction) {
+    public void setLatestAction(PlayerAction latestAction) {
         this.latestAction = latestAction;
     }
 
@@ -77,12 +77,12 @@ public class PlayerProxy extends PartyProxy {
     }
 
 
-    public boolean actionsContains(AbstractPlayerAction playerAction) {
+    public boolean actionsContains(PlayerAction playerAction) {
         return getActions().contains(playerAction);
     }
 
     public boolean actionsContains(Class clasz) {
-        for (AbstractPlayerAction action : getActions()) {
+        for (PlayerAction action : getActions()) {
             if (action.getClass().equals(clasz)) {
                 return true;
             }
