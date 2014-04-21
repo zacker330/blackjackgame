@@ -1,5 +1,8 @@
-21点游戏 v0.1.0     <img src="https://travis-ci.org/zacker330/blackjackgame.svg" data-bindattr-421="421" title="Build Status Images">
+21点游戏 v0.1.0
 ----
+
+[![Build Status](https://travis-ci.org/zacker330/blackjackgame.svg?branch=master)](https://travis-ci.org/zacker330/blackjackgame)
+
 
 
 
