@@ -13,30 +13,6 @@
         <maven>3.0</maven>
     </prerequisites>
 
-
-    <repositories>
-             <repository>
-            <id>koala-releases</id>
-            <url>http://nexus.openkoala.org/content/repositories/public-releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>koala-snapshots</id>
-            <url>http://nexus.openkoala.org/content/repositories/public-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <properties>
         <groovy-version>2.2.1</groovy-version>
    
